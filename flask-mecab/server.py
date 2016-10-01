@@ -51,7 +51,6 @@ def mecab_parse(sentence, dic='ipadic'):
     # 出力フォーマット（デフォルト）
     format = ['表層形', '品詞','品詞細分類1', '品詞細分類2', '品詞細分類3', '活用形', '活用型','原型','読み','発音']
 
-    #return m.parse(sentence)
     return [dict(zip(format, (lambda x: [x[0]]+x[1].split(','))(p.split('\t')))) for p in m.parse(sentence).split('\n')[:-2]]
 
 
