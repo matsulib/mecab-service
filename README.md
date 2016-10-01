@@ -30,7 +30,10 @@ $ docker-compose up -d
 ## 実行例 ipadic
 
 ```shell-session
-$ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic -H "Accept: application/json" -H "Content-type: application/json" -d '{"sentence": "関数型プログラミング"}'  | jq .
+$ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
+       -H "Accept: application/json" \
+       -H "Content-type: application/json" \
+       -d '{"sentence": "関数型プログラミング"}'  | jq .
 
 {
   "dict": "ipadic",
@@ -81,7 +84,10 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic -H "Accept: applicati
 ## 実行例 neologd
 
 ```shell-session
-$ curl -X POST http://localhost:5000/mecab/v1/parse-neologd -H "Accept: application/json" -H "Content-type: application/json" -d '{"sentence": "関数型プログラミング"}'  | jq .
+$ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
+       -H "Accept: application/json" \
+       -H "Content-type: application/json" \
+       -d '{"sentence": "関数型プログラミング"}'  | jq .
 
 {
   "dict": "neologd",
