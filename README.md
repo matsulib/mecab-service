@@ -34,7 +34,9 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
        -H "Accept: application/json" \
        -H "Content-type: application/json" \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
+```
 
+```
 {
   "dict": "ipadic",
   "message": "Success",
@@ -88,7 +90,9 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
        -H "Accept: application/json" \
        -H "Content-type: application/json" \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
+```
 
+```
 {
   "dict": "neologd",
   "message": "Success",
