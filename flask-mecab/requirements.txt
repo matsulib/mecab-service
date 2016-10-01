@@ -1,0 +1,2 @@
+Flask==0.11.1
+mecab-python3==0.7

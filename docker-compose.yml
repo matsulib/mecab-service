@@ -1,0 +1,7 @@
+api:
+  build: ./flask-mecab
+  volumes:
+    - "./flask-mecab:/opt/api"
+  ports:
+    - "5000:5000"
+  restart: always
