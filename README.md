@@ -27,11 +27,31 @@ docker-composeコマンドだけで起動できるMeCabサービス
 $ docker-compose up -d   
 ```
 
-## 実行例 ipadic
+## 実行方法
+HTTPリクエスト
 
+```
+POST /mecab/v1/parse-ipadic
+POST /mecab/v1/parse-neologd
+```
+
+リクエストヘッダ
+
+```
+Content-Type: application/json
+```
+
+リクエストボディ
+
+```
+{
+  "sentence": 文字列
+}
+```
+
+## 実行例 ipadic
 ```shell-session
 $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
-       -H "Accept: application/json" \
        -H "Content-type: application/json" \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
 ```
@@ -83,11 +103,11 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
  
 ``` 
 
-## 実行例 neologd
+## 実行例 mecab-ipadic-neologd
+mecab-ipadic-neologdは固有名詞に強い辞書です。
 
 ```shell-session
 $ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
-       -H "Accept: application/json" \
        -H "Content-type: application/json" \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
 ```
