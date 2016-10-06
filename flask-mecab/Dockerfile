@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update \
-  && apt-get install python3 python3-pip curl git sudo -y \
+  && apt-get install python3 python3-pip curl git sudo cron -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
