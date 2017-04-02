@@ -21,10 +21,12 @@ docker-composeコマンドだけで起動できるMeCabサービス
 
 ```
 
-## 起動方法
-
+## 起動方法／終了方法
 ```shell-session 
 $ docker-compose up -d   
+```
+```shell-session 
+$ docker-compose down
 ```
 
 ## 実行方法
