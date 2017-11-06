@@ -1,4 +1,4 @@
-#!/bin/python3
+﻿#!/bin/python3
 from flask import Flask, jsonify, abort, request
 import MeCab
 
@@ -32,7 +32,7 @@ def parse_neologd():
 
 @app.errorhandler(400)
 def error400(error):
-    return macab_response(400, messages[1], None, None)
+    return mecab_response(400, messages[1], None, None)
 
 
 def mecab_response(status, message, results, dic):
