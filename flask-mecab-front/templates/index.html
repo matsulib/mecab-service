@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<header class="container-fluid bHead">
+    <div class="container bHead">
+        <h1><a href="/">{{ title }}</a></h1>
+    </div>
+</header>
+<div id="app">
+    <div class="container">
+        <mecab v-if="ok"></mecab>
+    </div>
+</div>
+<footer class="text-center container-fluid bFoot">
+    <div class="container">
+        <a href="https://github.com/matsulib/mecab-service">Source Code</a>
+    </div>
+</footer>
+{% endblock %}

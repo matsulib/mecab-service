@@ -5,3 +5,14 @@ api:
   ports:
     - "5000:5000"
   restart: always
+front:
+  build: ./flask-mecab-front
+  volumes:
+    - "./flask-mecab-front:/opt/front"
+  ports:
+    - "5001:5001"
+  restart: always
+  links:
+    - api
+  environment:
+    FLASK_MECAB_URI: "http://api:5000/mecab/v1"

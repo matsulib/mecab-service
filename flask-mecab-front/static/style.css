@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.bHead {
+    padding-bottom: 10px;
+    background-color: #31708f;
+}
+.bHead a {
+    color: #eee;
+}
+.bFoot {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    border-top: 1px solid #ccc;
+}
+
+.myForm {
+    padding-bottom: 10px;
+}
