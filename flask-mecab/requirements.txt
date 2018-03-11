@@ -1,2 +1,3 @@
-Flask==0.11.1
+Flask==0.12.2
+from flask_cors import CORS
 mecab-python3==0.7

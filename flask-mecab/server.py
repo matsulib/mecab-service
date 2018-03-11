@@ -1,8 +1,10 @@
 ﻿#!/bin/python3
 from flask import Flask, jsonify, abort, request
+from flask_cors import CORS
 import MeCab
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/mecab/*": {"origins": "*"}})
 
 messages = ['Success', 'Faild']
 
