@@ -5,20 +5,30 @@ docker-composeコマンドだけで起動できるMeCabサービス
 * flask-mecab
     - MeCabを利用できるRESTfulなflaskサーバー
     - IPA辞書と新語辞書mecab-ipadic-neologdが選択できる
-
-* フロントエンド
-    - 未定
+    
+* flask-mecab-front
+    - flask-mecabのAPIを呼び出すフロントエンドアプリ
+    - 環境：Flask, Vue.js, Bootstrap3
 
 ## ディレクトリ構成
 ```
 .
-├── README.md
 ├── docker-compose.yml
-└── flask-mecab
-    ├── Dockerfile
-    ├── requirements.txt
-    └── server.py
-
+├── flask-mecab
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── server.py
+├── flask-mecab-front
+│   ├── app.py
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── static
+│   │   ├── app.js
+│   │   └── style.css
+│   └── templates
+│       ├── index.html
+│       └── layout.html
+└── README.md
 ```
 
 ## 起動方法／終了方法
@@ -135,3 +145,8 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
   "status": 200
 }
 ```
+
+## フロントエンド
+ブラウザで`http://localhost:5001/`にアクセスします。
+### スクリーンショット
+![mecab.PNG](https://qiita-image-store.s3.amazonaws.com/0/141719/cdf400f7-9c95-9989-25e2-f731572feb37.png)
