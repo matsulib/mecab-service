@@ -3,15 +3,16 @@
 docker-composeコマンドだけで起動できるMeCabサービス
 
 * flask-mecab
-    - MeCabを利用できるRESTfulなflaskサーバー
-    - IPA辞書と新語辞書mecab-ipadic-neologdが選択できる
-    
+  * MeCabを利用できるRESTfulなflaskサーバー
+  * IPA辞書と新語辞書mecab-ipadic-neologdが選択できる
+
 * flask-mecab-front
-    - flask-mecabのAPIを呼び出すフロントエンドアプリ
-    - 環境：Flask, Vue.js, Bootstrap3
+  * flask-mecabのAPIを呼び出すフロントエンドアプリ
+  * 環境：Flask, Vue.js, Bootstrap3
 
 ## ディレクトリ構成
-```
+
+```text
 .
 ├── docker-compose.yml
 ├── flask-mecab
@@ -32,43 +33,46 @@ docker-composeコマンドだけで起動できるMeCabサービス
 ```
 
 ## 起動方法／終了方法
-```shell-session 
-$ docker-compose up -d   
+
+```shell-session
+$ docker-compose up -d
 ```
-```shell-session 
+
+```shell-session
 $ docker-compose down
 ```
 
 ## 実行方法
 HTTPリクエスト
 
-```
+```text
 POST /mecab/v1/parse-ipadic
 POST /mecab/v1/parse-neologd
 ```
 
 リクエストヘッダ
 
-```
+```text
 Content-Type: application/json
 ```
 
 リクエストボディ
 
-```
+```json
 {
   "sentence": 文字列
 }
 ```
 
 ## 実行例 ipadic
+
 ```shell-session
 $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
        -H "Content-type: application/json" \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
 ```
 
-```
+```json
 {
   "dict": "ipadic",
   "message": "Success",
@@ -112,10 +116,10 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-ipadic \
   ],
   "status": 200
 }
- 
-``` 
+```
 
 ## 実行例 mecab-ipadic-neologd
+
 mecab-ipadic-neologdは固有名詞に強い辞書です。
 
 ```shell-session
@@ -124,7 +128,7 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
        -d '{"sentence": "関数型プログラミング"}'  | jq .
 ```
 
-```
+```json
 {
   "dict": "neologd",
   "message": "Success",
@@ -147,6 +151,9 @@ $ curl -X POST http://localhost:5000/mecab/v1/parse-neologd \
 ```
 
 ## フロントエンド
+
 ブラウザで`http://localhost:5001/`にアクセスします。
+
 ### スクリーンショット
+
 ![mecab.PNG](https://qiita-image-store.s3.amazonaws.com/0/141719/cdf400f7-9c95-9989-25e2-f731572feb37.png)
