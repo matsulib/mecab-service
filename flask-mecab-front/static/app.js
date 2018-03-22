@@ -6,7 +6,7 @@ const http = axios.create({
 var mecab = Vue.extend({
     template: `<div id="mecab" class="container-fluid">
         <h2 class="page-header">
-            Mecab
+            MeCab
             <small>ipadic／mecab-ipadic-NEologd</small>
         </h2>
         <form class="form-inline container-fluid myForm">
