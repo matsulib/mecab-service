@@ -20,7 +20,6 @@ def parse():
     return mecab_response(200, messages[0], results, 'ipadic')
 
 
-
 @app.route('/mecab/v1/parse-neologd', methods=['POST'])
 def parse_neologd():
     if not (request.json and 'sentence' in request.json):
@@ -51,11 +50,10 @@ def mecab_parse(sentence, dic='ipadic'):
     m = MeCab.Tagger('-d ' + dic_dir + dic_name)
 
     # 出力フォーマット（デフォルト）
-    format = ['表層形', '品詞','品詞細分類1', '品詞細分類2', '品詞細分類3', '活用形', '活用型','原型','読み','発音']
+    format = ['表層形', '品詞', '品詞細分類1', '品詞細分類2', '品詞細分類3', '活用形', '活用型','原型','読み','発音']
 
     return [dict(zip(format, (lambda x: [x[0]]+x[1].split(','))(p.split('\t')))) for p in m.parse(sentence).split('\n')[:-2]]
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
