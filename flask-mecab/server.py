@@ -1,6 +1,7 @@
 ﻿#!/bin/python3
-from flask import Flask, jsonify, abort, request
+from flask import Flask, abort, jsonify, request
 from flask_cors import CORS
+
 import MeCab
 
 app = Flask(__name__)
