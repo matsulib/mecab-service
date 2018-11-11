@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update \
-  && apt-get install python3 python3-pip -y \
+  && apt-get install -y python3 python3-pip \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
